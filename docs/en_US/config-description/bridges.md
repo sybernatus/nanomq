@@ -83,10 +83,7 @@ This configuration enables NanoMQ to establish an MQTT over TCP bridge connectio
 - `clean_start`: Specifies the clean start flag for the bridge. **Note**: Some IoT platforms require this to be set to `false`.
 - `username`: Specifies the username for the bridge.
 - `password`: Specifies the password for the bridge.
-- `forwards`: This is an array of topics that need to be forwarded to the remote MQTT server, including
-  - `topic`
-  - `qos`
-
+- `forwards`: This is an array of topics that need to be forwarded to the remote MQTT server. **Note**: MQTT wildcard can be used like `["my-topic/#"]`.
 - `ssl`: Contains settings for SSL/TLS security:
   - `key_password`: Specifies the password for the client's private key file, if it's password-protected.
   - `keyfile`: Specifies the path to the client's private key file.
