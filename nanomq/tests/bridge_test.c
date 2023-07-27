@@ -6,10 +6,10 @@ main()
 {
 	int rv = 0;
 
-	char *cmd_sub_emqx = "mosquitto_sub -h broker.emqx.io -p 1883 -t forward1/test";
-	char *cmd_sub_nmq = "mosquitto_sub -h 127.0.0.1 -p 1881 -t recv/topic1";
-	char *cmd_pub_nmq = "mosquitto_pub -h 127.0.0.1 -p 1881 -t forward1/test -m message-to-emqx";
-	char *cmd_pub_emqx = "mosquitto_pub -h broker.emqx.io -p 1883 -t recv/topic1 -m message-to-nmq";
+	char *cmd_sub_emqx = "mosquitto_sub -h broker.emqx.io -p 1883 -t forward1/test -V mqttv5";
+	char *cmd_sub_nmq = "mosquitto_sub -h 127.0.0.1 -p 1881 -t recv/topic1 -V mqttv5";
+	char *cmd_pub_nmq = "mosquitto_pub -h 127.0.0.1 -p 1881 -t forward1/test -m message-to-emqx -V mqttv5";
+	char *cmd_pub_emqx = "mosquitto_pub -h broker.emqx.io -p 1883 -t recv/topic1 -m message-to-nmq -V mqttv5";
 
 	nng_thread *nmq;
 	FILE       *p_sub_emqx = NULL;
